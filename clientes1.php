@@ -15,7 +15,7 @@
     require_once "conect.php";
 ?>
 <main class="container"> 
- <h1> Clientes </h1> 
+ <h1> Filmes</h1> 
  <a href='forminsere.php' class="brown lighten-3 waves-effect waves-light btn"><i class="material-icons right">add</i>Inserir</a>
 <table class="highlight">
         <thead>
