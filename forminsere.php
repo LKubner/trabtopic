@@ -151,23 +151,40 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
 
       <div class="col s12">
         <i class="material-icons prefix"> flight</i>
-        <span style="margin-left: 12px;"> Escolha uma companhia: </span>
+        <span style="margin-left: 12px;"> Escolha uma categoria: </span>
        
         <p>
           <label>
         <input class="with-gap" name="cia" type="radio"  />
-        <span>Latam</span>
+        <span>Terror
       </label> 
       
       <label>
         <input class="with-gap" name="cia" type="radio"  />
-        <span>Gol</span>
+        <span>Ação</span>
       </label> 
       
        <label>
         <input  name="cia" type="radio"  />
-        <span>Azul</span>
-      </label> </p>
+        <span>Aventura</span>
+      </label> 
+      
+      <label>
+        <input class="with-gap" name="cia" type="radio"  />
+        <span>Sci-Fi</span>
+      </label> 
+
+      <label>
+        <input class="with-gap" name="cia" type="radio"  />
+        <span>Comedia</span>
+      </label> 
+
+      <label>
+        <input class="with-gap" name="cia" type="radio"  />
+        <span>Romance</span>
+      </label> 
+    
+    </p>
       </div>
       </div>
   
@@ -183,27 +200,6 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
           <label style="font-size: 14px;">Qual a sua ave preferida?</label>
         </div>
 </div>
-
-<span> Doces preferidos: </span>
-<p>
-<label>
-<input type="checkbox" /> <span>Red</span>
-</label>
-    </p>
-    <p>
-      <label>
-        <input type="checkbox" checked="checked"  class="checkbox-black"/>
-        <span>Yellow</span>
-      </label>
-    </p>
-    <p>
-      <label>
-        <input type="checkbox" class="filled-in checkbox-black" checked="checked" />
-        <span>Filled in</span>
-      </label>
-    </p>
-
-  
 
 
   <div class="row"> 
