@@ -128,25 +128,24 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
      
       <div class="input-field col s12">
       <i class="material-icons prefix"> perm_identity</i>
-      <input  id="nomeCliente" type="text" class="validate" name="nomeCliente" pattern="[A-Za-z\s]+" required>
-     <label for="nomeCliente">Nome Cliente</label>
-     <span class="helper-text" data-error="Preencha o campo sem usar números."> </span>
+      <input  id="nomeFilme" type="text" class="validate" name="nomeCliente" pattern="[A-Za-z\s]+" required>
+     <label for="nomeFilme">Nome do Filme</label>
+     <span class="helper-text" data-error="Preencha o campo."> </span>
     </div>
      
 
     
         <div class="input-field col s12">
         <i class="material-icons prefix"> date_range</i>
-          <input id="dataNasc" type="text" class="datepicker" name="dataNasc">
-          <label for="dataNasc">Data nascimento</label>
+          <input id="duracao" type="text" class="datetime" name="duracao">
+          <label for="duracao">Duracao</label>
         </div>
       
         <div class="input-field col s12">
-      <i class="material-icons prefix"> lock</i>
-      <input  id="senha" type="password" class="validate" name="senha" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}" required>
-     <label for="senha">Senha</label>
-     <span class="helper-text" data-error="Deve ter 6 caracteres, no mínimo e  conter pelo menos 1 maiuscula,1 minuscula e 1 número;."> </span>
-    </div>
+        <i class="material-icons prefix"> date_range</i>
+          <input id="data_lancamento" type="date" class="datepicker" name="data_lancamento">
+          <label for="data_lancamento">Data de Lançamento</label>
+        </div>
 
 
       <div class="col s12">
@@ -205,7 +204,7 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
   <div class="row"> 
   <div class="col s12">   
     <p class="center-align">  
-        <button class="btn waves-effect waves-light brown  lighten-3" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light brown  lighten-3" type="submit" name="action">Enviar
     <i class="material-icons right">send</i> </button>
   </p>
 </div>
