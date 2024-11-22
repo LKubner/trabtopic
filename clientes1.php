@@ -110,12 +110,18 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
 <main class="container"> 
 
     <h1 class="center-align"> Cadastrar Filme </h1>
-    <form action="insere.php" method="get">
      <div class="card-panel">  
+
+     <div class="input-field col s12">
+      <i class="material-icons prefix"> perm_identity</i>
+      <input  id="id_filme" type="text" class="validate" name="id_filme">
+     <label for="id_filme">ID</label>
+    </div>
+
      
     <div class="input-field col s12">
       <i class="material-icons prefix"> perm_identity</i>
-      <input  id="nomeFilme" type="text" class="validate" name="nomeFilme" required>
+      <input  id="nomeFilme" type="text" class="validate" name="nome" required>
      <label for="nomeFilme">Nome do Filme</label>
      <span class="helper-text" data-error="Preencha o campo."> </span>
     </div>
@@ -134,7 +140,7 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
 
         <div class="input-field col s12">
       <i class="material-icons prefix"> airline_seat_recline_normal</i>
-      <input  id="nomeFilme" type="text" class="validate" name="nomeCliente" required>
+      <input  id="nomeFilme" type="text" class="validate" name="descricao" required>
      <label for="nomeFilme">Descrição</label>
      <span class="helper-text" data-error="Preencha o campo."> </span>
     </div>
@@ -146,32 +152,32 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
        
         <p>
           <label>
-        <input class="with-gap" name="cia" type="radio"  />
+        <input class="with-gap" name="categoria" type="radio"  />
         <span>Terror
       </label> 
       
       <label>
-        <input class="with-gap" name="cia" type="radio"  />
+        <input class="with-gap" name="categoria" type="radio"  />
         <span>Ação</span>
       </label> 
-      
+      <?php //COLORAC OS VALUES NOS RADINHOS?>
        <label>
-        <input  name="cia" type="radio"  />
+        <input  name="categoria" type="radio" value="aaaa" />
         <span>Aventura</span>
       </label> 
       
       <label>
-        <input class="with-gap" name="cia" type="radio"  />
+        <input class="with-gap" name="categoria" type="radio"  />
         <span>Sci-Fi</span>
       </label> 
 
       <label>
-        <input class="with-gap" name="cia" type="radio"  />
+        <input class="with-gap" name="categoria" type="radio"  />
         <span>Comedia</span>
       </label> 
 
       <label>
-        <input class="with-gap" name="cia" type="radio"  />
+        <input class="with-gap" name="categoria" type="radio"  />
         <span>Romance</span>
       </label> 
     
@@ -240,8 +246,7 @@ CPF.addEventListener("input", function (event) {
   }
 }); */
 </script>
-<script src="script.js"></script>
-</form>
+<script src="js/script.js"></script>
 </body>
 </html>
 
@@ -266,7 +271,7 @@ CPF.addEventListener("input", function (event) {
 <body>
 <?php 
     include_once "header.php" ;
-    require_once "conect.php";
+    include_once "conect.php" ;
     $conexao = conectar();
 ?>
 <main class="container"> 
@@ -274,25 +279,26 @@ CPF.addEventListener("input", function (event) {
         <thead>
           <tr>
               <th>ID</th>
-              <th>CPF</th>
               <th>Nome</th>
-              <th>Data nasc</th>  
-              <th>Operação </th>       
+              <th>Duracao</th>
+              <th>Data de Lançamento</th>  
+              <th> Descrição </th>    
+              <th> Categoria </th>   
           </tr>
         </thead>
         <tbody>
   <?php
-  $sql = "SELECT * FROM filme";
+  $sql = "SELECT * FROM filmes";
   $resultado = mysqli_query($conexao,$sql); 
-  var_dump($resultado);
+  //var_dump($resultado);
   while($linha = mysqli_fetch_assoc($resultado))
   {
   ?>
       <tr>
       <td> <?php echo $linha['id']; ?> </td>
-      <td> <?php echo $linha['nomeFilme']; ?> </td>
+      <td> <?php echo $linha['nome']; ?> </td>
       <td> <?php echo $linha['duracao']; ?> </td>
-      <td><?php  $data_lancamento = date('d/m/Y',strtotime($linha['data_lancamento'])); echo $data_lancamento; ?></td>
+      <td><?php  $dataNasc = date('d/m/Y',strtotime($linha['dataNasc'])); echo $dataNasc; ?></td>
       <td> <a href="#modal<?php echo $linha['id']; ?>" class="btn-floating btn-small waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a> </td>
       
    <!-- Modal Structure -->
@@ -350,20 +356,14 @@ CPF.addEventListener("input", function (event) {
       });
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-            // Inicializa a sidenav
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {
-                edge: 'left'});
-
-            // Configura a largura da sidenav
-            var sidenav = document.querySelector('.sidenav');
-            sidenav.style.width = '250px'; // Ajuste a largura conforme necessário
-        });
+    
 
 
 
+    
 </script>
 
 </body>
 </html>
+
+

@@ -3,17 +3,17 @@
 require_once "conect.php";
 $conexao = conectar();
 
-$usuario = json_decode(file_get_contents("php://input"));
+$filme = json_decode(file_get_contents("php://input"));
 $sql = "INSERT INTO filme 
         (nome, duracao, data_lancamento, descricao, categoria)
         VALUES 
-        ('$usuario->nome', 
-        '$usuario->duracao', 
-        '$usuario->data_lancamento', 
-		'$usuario->descricao',
-		'$usuario->categoria')";
+        ('$filme->nome', 
+        '$filme->duracao', 
+        '$filme->data_lancamento', 
+		'$filme->descricao',
+		'$filme->categoria')";
 
 executarSQL($conexao, $sql);
 
-$usuario->id_filme = mysqli_insert_id($conexao);
-echo json_encode($usuario);
+$filme->id_filme = mysqli_insert_id($conexao);
+echo json_encode($filme);
