@@ -13,6 +13,7 @@
 <?php 
     include_once "header.php" ;
     require_once "conect.php";
+    $conexao = conectar();
 ?>
 <main class="container"> 
  <h1> Filmes</h1> 

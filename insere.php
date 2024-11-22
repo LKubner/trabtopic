@@ -1,22 +1,19 @@
-
 <?php
-include_once "conect.php";
-$CPF = $_GET['CPF'];
-$nomeCliente = $_GET['nomeCliente'];
-$dataNasc = $_GET['dataNasc'];
-echo "$dataNasc";
-$dataNasc = implode("-",array_reverse(explode("/",$dataNasc)));
-echo "$dataNasc";
 
-$sql = "INSERT INTO clientes(CPF,nomeCliente,dataNasc) 
-VALUES ('$CPF','$nomeCliente','$dataNasc')";
+require_once "conexao.php";
+$conexao = conectar();
 
-$resultado = mysqli_query($conexao,$sql);
-var_dump($resultado);
-mysqli_close($conexao);
+$usuario = json_decode(file_get_contents("php://input"));
+$sql = "INSERT INTO filme 
+        (nome, email, senha)
+        VALUES 
+        ('$usuario->nome', 
+        '$usuario->duracao', 
+        '$usuario->data_lancamento', 
+		'$usuario->descricao',
+		'$usuario->categoria')";
 
-if ($resultado)
-{
-	header("Location:clientes1.php");
-} 
-?>
+executarSQL($conexao, $sql);
+
+$usuario->id_usuario = mysqli_insert_id($conexao);
+echo json_encode($usuario);
