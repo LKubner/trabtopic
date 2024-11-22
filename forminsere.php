@@ -109,31 +109,14 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
 
     <h1 class="center-align"> Cadastrar </h1>
     <form action="insere.php" method="get">
-     <div class="card-panel">
-      
-
-
-
-     <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix"> face</i>
-          <input placeholder="digite no formato 999.999.999-99" id="CPF" required pattern="[0-9][0-9][0-9]\.\d{3}\.\d{3}-\d{2}" type="text" class="validate" name="CPF"
-          title="digite no formato 999.999.999-99">
-          <label for="CPF">CPF</label>
-          <span class="helper-text" data-error="Campo deve ser preenchido! Use XXX.XXX.XXX-XX."></span>
-        </div>
-      
-      
-      
+     <div class="card-panel">  
      
-      <div class="input-field col s12">
+    <div class="input-field col s12">
       <i class="material-icons prefix"> perm_identity</i>
-      <input  id="nomeFilme" type="text" class="validate" name="nomeCliente" pattern="[A-Za-z\s]+" required>
+      <input  id="nomeFilme" type="text" class="validate" name="nomeFilme" required>
      <label for="nomeFilme">Nome do Filme</label>
      <span class="helper-text" data-error="Preencha o campo."> </span>
     </div>
-     
-
     
         <div class="input-field col s12">
         <i class="material-icons prefix"> date_range</i>
@@ -147,9 +130,16 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
           <label for="data_lancamento">Data de Lançamento</label>
         </div>
 
+        <div class="input-field col s12">
+      <i class="material-icons prefix"> airline_seat_recline_normal</i>
+      <input  id="nomeFilme" type="text" class="validate" name="nomeCliente" required>
+     <label for="nomeFilme">Descrição</label>
+     <span class="helper-text" data-error="Preencha o campo."> </span>
+    </div>
+     
 
       <div class="col s12">
-        <i class="material-icons prefix"> flight</i>
+        <i class="material-icons prefix"> cached</i>
         <span style="margin-left: 12px;"> Escolha uma categoria: </span>
        
         <p>
@@ -188,16 +178,6 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
       </div>
   
       
-      <div class="row"> 
-         <div class="input-field col s6">
-          <select class="icons">
-            <option value="" disabled selected>Escolha a sua Opção</option>
-            <option value="Cardeal" data-icon="cardeal.jpg">Cardeal</option>
-            <option value="Ema" data-icon="ema.jpg">Ema</option>
-            <option value="Gansos" data-icon="gansos.jpg">Gansos</option>
-          </select>
-          <label style="font-size: 14px;">Qual a sua ave preferida?</label>
-        </div>
 </div>
 
 
@@ -245,6 +225,10 @@ ul.dropdown-content li>a, ul.dropdown-content li>span {
         var instances = M.FormSelect.init(elems);
       });
 
+
+
+
+      
 /*
 
 var CPF = document.getElementById("CPF");

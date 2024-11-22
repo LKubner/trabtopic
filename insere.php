@@ -1,11 +1,11 @@
 <?php
 
-require_once "conexao.php";
+require_once "conect.php";
 $conexao = conectar();
 
 $usuario = json_decode(file_get_contents("php://input"));
 $sql = "INSERT INTO filme 
-        (nome, email, senha)
+        (nome, duracao, data_lancamento, descricao, categoria)
         VALUES 
         ('$usuario->nome', 
         '$usuario->duracao', 
@@ -15,5 +15,5 @@ $sql = "INSERT INTO filme
 
 executarSQL($conexao, $sql);
 
-$usuario->id_usuario = mysqli_insert_id($conexao);
+$usuario->id_filme = mysqli_insert_id($conexao);
 echo json_encode($usuario);
