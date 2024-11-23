@@ -127,3 +127,52 @@
   
 </body>
 </html>
+
+<?php 
+  
+  ?>
+          
+       
+        
+         
+      </tbody>
+      </table>
+  
+
+ <br>
+      <a href='relatorio.php' class="brown lighten-3 waves-effect waves-light btn"><i class="material-icons right">add</i>Gerar relatório</a>
+      <table class="highlight">
+</main>
+
+
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+// M.AutoInit();
+   document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {
+        opacity: 0.7,        // Opacidade do background (0.0 a 1.0)
+        inDuration: 1000,     // Duração da animação de abertura em milissegundos
+        outDuration: 1200,    // Duração da animação de fechamento em milissegundos
+        dismissible: true,   // Permite fechar ao clicar fora do modal
+        startingTop: '10%',  // Posição inicial do modal em relação ao topo
+        endingTop: '15%'     // Posição final do modal em relação ao topo
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa a sidenav
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {
+                edge: 'left'});
+
+            // Configura a largura da sidenav
+            var sidenav = document.querySelector('.sidenav');
+            sidenav.style.width = '250px'; // Ajuste a largura conforme necessário
+        });
+
+
+
+    
+</script>

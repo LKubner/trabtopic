@@ -57,16 +57,18 @@ $dados .= "<table>
         </thead>
         <tbody>";
         
-  $sql = "SELECT id,CPF,nomeCliente,dataNasc FROM clientes";
+  $sql = "SELECT * FROM filmes";
+  $conexao = conectar();
   $resultado = mysqli_query($conexao,$sql); 
   while($linha = mysqli_fetch_assoc($resultado))
   {
 	  $dados .= "<tr>";
-    $dados .= '<td>' . $linha['id'] . '</td>';
-	  $dados .= '<td>'. $linha['CPF'] . '</td>'; 
-	  $dados .= '<td>' . $linha['nomeCliente'] . '</td>'; 
-	  $dataNasc = date('d/m/Y',strtotime($linha['dataNasc']));
-	  $dados .= '<td>' .$dataNasc . '</td>';
+    $dados .= '<td>' . $linha['id_filme'] . '</td>';
+	  $dados .= '<td>'. $linha['nome'] . '</td>'; 
+	  $dados .= '<td>' . $linha['duracao'] . '</td>'; 
+	  $dataLanc= date('d/m/Y',strtotime($linha['data_lancamento']));
+    $dados .= '<td>' . $linha['descricao'] . '</td>'; 
+    $dados .= '<td>' . $linha['categoria'] . '</td>'; 
 	  $dados .= "</tr>";     
   }       
 	$dados .= "</tbody>";
