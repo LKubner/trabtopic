@@ -29,21 +29,41 @@ function inserirUsuario(filme) {
     tdNome.innerHTML = filme.nome;
     let tdDuracao = document.createElement('td');
     tdDuracao.innerHTML = filme.duracao;
+    let tdData_lancamento = document.createElement('td');
+    tdData_lancamento.innerHTML = filme.data_lancamento;
+    let tdDescricao = document.createElement('td');
+    tdDescricao.innerHTML = filme.descricao;
+    let tdCategoria = document.createElement('td');
+    tdCategoria.innerHTML = filme.categoria;
     let tdAlterar = document.createElement('td');
     let btnAlterar = document.createElement('button');
-    btnAlterar.innerHTML = "Alterar";
+
+    btnAlterar.classList.add('btn', 'waves-effect', 'waves-light', 'black');
+    let iconAlterar = document.createElement('i');
+    iconAlterar.classList.add('material-icons');
+    iconAlterar.innerHTML = 'edit';
+    btnAlterar.appendChild(iconAlterar);
     btnAlterar.addEventListener("click", buscaUsuario, false);
     btnAlterar.id_filme = filme.id_filme;
     tdAlterar.appendChild(btnAlterar);
+
     let tdExcluir = document.createElement('td');
     let btnExcluir = document.createElement('button');
+
+    btnExcluir.classList.add('btn', 'waves-effect', 'waves-light', 'black');
+    let iconExcluir = document.createElement('i');
+    iconExcluir.classList.add('material-icons');
+    iconExcluir.innerHTML = 'delete';
+    btnExcluir.appendChild(iconExcluir);
     btnExcluir.addEventListener("click", excluir, false);
     btnExcluir.id_filme = filme.id_filme;
-    btnExcluir.innerHTML = "Excluir";
     tdExcluir.appendChild(btnExcluir);
     tr.appendChild(tdId);
     tr.appendChild(tdNome);
-    tr.appendChild(tdEmail);
+    tr.appendChild(tdDuracao);
+    tr.appendChild(tdData_lancamento);
+    tr.appendChild(tdDescricao);
+    tr.appendChild(tdCategoria);
     tr.appendChild(tdAlterar);
     tr.appendChild(tdExcluir);
     tbody.appendChild(tr);
@@ -81,7 +101,10 @@ function alterarUsuario(filme) {
     for (const tr of tbody.children) {
         if (tr.children[0].innerHTML == filme.id_filme) {
             tr.children[1].innerHTML = filme.nome;
-            tr.children[2].innerHTML = filme.email;
+            tr.children[2].innerHTML = filme.duracao;
+            tr.children[3].innerHTML = filme.data_lancamento;
+            tr.children[4].innerHTML = filme.descricao;
+            tr.children[5].innerHTML = filme.categoria;
         }
     }
 }
@@ -95,7 +118,7 @@ function buscaUsuario(evt) {
         }
     )
         .then(response => response.json())
-        .then(filme => preencheForm(filme))
+        .then(usuario => preencheForm(usuario))
         .catch(error => console.log(error));
 }
 
@@ -104,16 +127,22 @@ function preencheForm(filme) {
     inputIDUsuario.value = filme.id_filme;
     let inputNome = document.getElementsByName("nome")[0];
     inputNome.value = filme.nome
-    let inputEmail = document.getElementsByName("email")[0];
-    inputEmail.value = filme.email;
+    let inputDuracao = document.getElementsByName("duracao")[0];
+    inputDuracao.value = filme.duracao;
+    let inputData = document.getElementsByName("data_lancamento")[0];
+    inputData.value = filme.data;
+    let inputDescricao = document.getElementsByName("descricao")[0];
+    inputDescricao.value = filme.descricao;
+    let inputCategoria = document.getElementsByName("categoria")[0];
+    inputCategoria.value = filme.categoria
+
 }
 
 function salvarUsuario(event) {
-    // parar o comportamento padrão do form
     event.preventDefault();
-    // obtém o input id_filme
+
+    // Obtém os valores dos inputs
     let inputIDFilme = document.getElementsByName("id_filme")[0];
-    // pega o valor do input id_filme
     let id_filme = inputIDFilme.value;
 
     let inputNome = document.getElementsByName("nome")[0];
@@ -127,23 +156,49 @@ function salvarUsuario(event) {
     let inputCategoria = document.getElementsByName("categoria")[0];
     let categoria = inputCategoria.value;
 
-    if (id_filme == "") {
-        cadastrar(id_filme, nome, duracao, data_lancamento, descricao, categoria);
+    // Verifica se o ID do filme está vazio
+    if (id_filme === "") {
+        cadastrar(nome, duracao, data_lancamento, descricao, categoria);
     } else {
-        alterar(id_filme, nome, email, senha);
+        alterar(id_filme, nome,duracao, data_lancamento, descricao, categoria);
     }
+
+    // Limpa o formulário
     document.getElementsByTagName('form')[0].reset();
 }
 
-function cadastrar(id_filme, nome, duracao, data_lancamento, descricao, categoria) {
-    fetch('insere.php',
+function cadastrar(nome, duracao, data_lancamento, descricao, categoria) {
+    // Envia os dados JSON para o PHP
+    fetch('insere.php', {
+        method: 'POST',
+        body: JSON.stringify({
+            nome: nome,
+            duracao: duracao,
+            data_lancamento: data_lancamento,
+            descricao: descricao,
+            categoria: categoria
+        }),
+        headers: {
+            'Content-Type': "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(filme => {
+        console.log(filme);  // Apenas para depurar, verifique se a resposta é correta
+        inserirUsuario(filme);
+    })
+    .catch(error => console.log(error));
+}
+
+function alterar(id_filme,nome,data_lancamento,duracao,descricao,categoria) {
+    fetch('alterar.php',
         {
             method: 'POST',
             body: JSON.stringify({
                 id_filme: id_filme,
                 nome: nome,
+               data_lancamento: data_lancamento,
                 duracao: duracao,
-                data_lancamento: data_lancamento,
                 descricao: descricao,
                 categoria: categoria
             }),
@@ -151,24 +206,6 @@ function cadastrar(id_filme, nome, duracao, data_lancamento, descricao, categori
         }
     )
         .then(response => response.json())
-        .then(filme => inserirUsuario(filme))
-        .catch(error => console.log(error));
-}
-
-function alterar(id_filme, nome, email, senha) {
-    fetch('alterar.php',
-        {
-            method: 'POST',
-            body: JSON.stringify({
-                id_filme: id_filme,
-                nome: nome,
-                email: email,
-                senha: senha
-            }),
-            headers: { 'Content-Type': "application/json; charset=UTF-8" }
-        }
-    )
-        .then(response => response.json())
-        .then(filme => alterarUsuario(filme))
+        .then(usuario => alterarUsuario(usuario))
         .catch(error => console.log(error));
 }

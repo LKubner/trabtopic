@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-</head>
-<body>
+
 <?php
 include "conect.php";
-$id = $_POST['id'];
-echo $id;
-
-$sql = "DELETE FROM clientes WHERE id=$id";
-$resultado = mysqli_query($conexao,$sql);
-
-mysqli_close($conexao);
-
-if($resultado)
-{
-	header("Location:clientes1.php");
-}
+$id = $_GET['id_filme'];
+$conexao = conectar();
+$sql = "DELETE FROM filme WHERE id_filme=$id";
+$retorno = executarSQL($conexao, $sql);
+echo json_encode($retorno);
 
 ?>
-</body>
-</html>
