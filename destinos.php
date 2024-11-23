@@ -17,22 +17,22 @@
   
   <div class="row"> </div>
   <div class="row">
-      <div class="col s12 m2  offset-m3 center-align"> <img  class="responsive-img" src="img/logo01.webp"> <br> Comida </div>
-      <div class="col s12 m2  center-align"> <img   class="responsive-img" src="img/logo02.webp"> <br> Diversão </div>
-      <div class="col s12 m2  center-align"> <img  class="responsive-img" src="img/logo03.webp"> <br> Relax </div>
+      <div class="col s12 m2  offset-m3 center-align"> <img  class="responsive-img" src="img/logo01.webp"> <br> Tops da semanas </div>
+      <div class="col s12 m2  center-align"> <img   class="responsive-img" src="img/logo02.webp"> <br> Aventuras emocionantes </div>
+      <div class="col s12 m2  center-align"> <img  class="responsive-img" src="img/logo03.webp"> <br> Momento Relax </div>
       <div class="col s12  m3 center-align">  </div>
     </div>
 
  
 
 <div class="row">
-      <div class="col s12 m6 center-align "> <img class="responsive-img" src="img/img01.webp"> </div>
-      <div class="col s12 m6 center-align "> <img class="responsive-img" src="img/img02.webp"> </div>
+      <div class="col s12 m6 center-align "> <img class="responsive-img" src="img/edward.jfif"> </div>
+      <div class="col s12 m6 center-align "> <img class="responsive-img" src="img/chapeu.jfif"> </div>
     </div>
     
 <div class="row">
-      <div class="col s12 m6 center-align"> <img class="responsive-img" src="img/img03.webp"> </div>
-      <div class="col s12 m6 center-align"> <img class="responsive-img" src="img/img04.webp"> </div>
+      <div class="col s12 m6 center-align"> <img class="responsive-img" src="img/starwars.jpg"> </div>
+      <div class="col s12 m6 center-align"> <img class="responsive-img" src="img/resident.jpg"> </div>
 </div>
 
 

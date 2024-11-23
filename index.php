@@ -64,11 +64,10 @@
           <img src="img/edward.jfif">
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>Classico do Cinema</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="#">Veja Só</a>
         </div>
       </div>
     </div>
@@ -76,15 +75,14 @@
     <div class="col s12 m6 l3">
       <div class="card">
         <div class="card-image">
-          <img src="img/roma.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/resident.jpg">
+          <span class="card-title">Resident Evil: Bem vindo a Raccon City</span>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>Esse é Legal</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="#">Sequencia proxima</a>
         </div>
       </div>
     </div>
@@ -93,15 +91,14 @@
     <div class="col s12 m6 l3">
       <div class="card">
         <div class="card-image">
-          <img src="img/florencax.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/chapeu.jfif">
+          <span class="card-title">Deu a louca na chapeuzinho vermelho</span>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>Esse filme é maluco</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="#">acessa aí</a>
         </div>
       </div>
     </div>
@@ -124,45 +121,7 @@
 
 
     
-    <div class="row">
-      <div class="col s1 blue ">1</div>
-      <div class="col s1 red">2</div>
-      <div class="col s1 blue">3</div>
-      <div class="col s1 red">4</div>
-      <div class="col s1 blue">5</div>
-      <div class="col s1 red">6</div>
-      <div class="col s1 blue ">7</div>
-      <div class="col s1 red">8</div>
-      <div class="col s1 blue">9</div>
-      <div class="col s1 red">10</div>
-      <div class="col s1 blue">11</div>
-      <div class="col s1 red">12</div>
-    </div>
-
-    <div class="row">
-      <div class="col s12 blue ">1</div>
-      <div class="col s6 red">2</div>
-      <div class="col s6 blue">3</div>   
-    </div>
-
-    <div class="row">
-      <div class="col s6 offset-s2 blue">3</div>   
-    </div>
-
-    <div class="row">
-      <div class="col s6 m9 red">Hello</div>
-      <div class="col s6 m3 green">Hello</div> 
-    </div>
-
-    <div class="row">
-      <div class="col  m9 red">Hello</div>
-      <div class="col  m3 green">Hello</div> 
-    </div>
-
-    <div class="row">
-      <div class="col s12 m6 l4 red">testando colunas </div>
-      <div class="col s12 m3 l8 green"> testando colunas </div>
-  </div>
+    
 
    
   <footer class="page-footer brown  lighten-3">
@@ -196,8 +155,8 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2024 todos os direitos reservados Luciano Kubner 
+            <a class="grey-text text-lighten-4 right" href="#!">Muito mais</a>
             </div>
           </div>
         </footer>
